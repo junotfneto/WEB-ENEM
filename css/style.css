@@ -1,0 +1,39 @@
+#map {
+        height: 60%;
+        width:60%;
+        float: left;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+.title{
+  text-align:center;
+  font-size:40px;
+  font-weight: bold;
+  background-color: #b30000;
+  height:65px;
+  border-bottom-style: solid;
+  color:white;
+  border-bottom-color:black;
+  border-bottom-width: 8px;
+}
+
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+}
+
+.container-right{
+
+  width:38%;
+  float: right;
+}
