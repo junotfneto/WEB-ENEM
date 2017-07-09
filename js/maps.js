@@ -7,7 +7,6 @@ var capitais=Array();
 	capitais[4] = {lat: -9.6498487, lng: -35.7089492}; //MACEIO
 	capitais[5] = {lat: -3.7318616, lng: -38.5266704}; //FORTALEZA
 
-var uluru = {lat: -25.363, lng: 131.044};
       
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
