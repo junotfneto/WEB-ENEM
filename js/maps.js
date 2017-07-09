@@ -38,6 +38,8 @@ var capitais=Array();
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: -12, lng: -38},
+          streetViewControl: false,
+          mapTypeControl: false,
           zoom: 5
     });
 
@@ -71,3 +73,5 @@ function addMarker(map, location, label){
 
     return marker;
 }
+
+initMap();
