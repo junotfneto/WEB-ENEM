@@ -1,4 +1,5 @@
 var map;
+var currentmarker = null;
 var capitais=Array();
 	capitais[0] = {lat: -12.9730401, lng: -38.502304}; //SALVADOR
 	capitais[1] = {lat: -10.9472468, lng: -37.0730823}; //ARACAJU
@@ -19,12 +20,14 @@ function initMap() {
     	addMarker(map, capitais[i], "");
     }
 
+    
+
     google.maps.event.addListener(map, 'click', function(event) {
-          addMarker(event.latLng, map);
-          //console.log(event.latLng.lat);
-          //alert(event.latLng);
-          document.getElementById('posicoes-clicadas').innerHTML+= event.latLng+"<br/>";
-        });
+        if(currentmarker != null)
+          currentmarker.setMap(null);
+        document.getElementById('posicoes-clicadas').innerHTML+= event.latLng+"<br/>";
+        currentmarker = addMarker(map, event.latLng, "A");
+    });
 }
 
 function addMarker(map, location, label){
@@ -36,5 +39,9 @@ function addMarker(map, location, label){
 
     google.maps.event.addListener(marker, 'click', function(event) {
           document.getElementById('posicoes-clicadas').innerHTML+= event.latLng+"<br/>";
+          if(currentmarker != null)
+            currentmarker.setMap(null);
     });
+
+    return marker;
 }
