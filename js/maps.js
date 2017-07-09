@@ -53,7 +53,8 @@ function initMap() {
     google.maps.event.addListener(map, 'click', function(event) {
         if(currentmarker != null)
           currentmarker.setMap(null);
-        document.getElementById('posicoes-clicadas').innerHTML+= event.latLng+"<br/>";
+        //document.getElementById('posicoes-clicadas').innerHTML+= event.latLng+"<br/>";
+        updatePositionTable(event.latLng);
         currentmarker = addMarker(map, event.latLng, "A");
     });
 }
@@ -66,12 +67,18 @@ function addMarker(map, location, label){
     });
 
     google.maps.event.addListener(marker, 'click', function(event) {
-          document.getElementById('posicoes-clicadas').innerHTML+= event.latLng+"<br/>";
+          //document.getElementById('posicoes-clicadas').innerHTML+= event.latLng+"<br/>";
+          updatePositionTable(event.latLng);
           if(currentmarker != null)
             currentmarker.setMap(null);
     });
 
     return marker;
+}
+
+function updatePositionTable(latLng){
+  document.getElementById('info-latitude').innerHTML= latLng.lat();
+  document.getElementById('info-longitude').innerHTML= latLng.lng();
 }
 
 initMap();
