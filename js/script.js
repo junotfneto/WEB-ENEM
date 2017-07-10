@@ -1,4 +1,4 @@
-// Apenas numeros no input
+//Apenas números no input
 function onlyNumber(evt) {
     var theEvent = evt || window.event;
     var key = theEvent.keyCode || theEvent.which;
