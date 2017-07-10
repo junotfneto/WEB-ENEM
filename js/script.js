@@ -1,4 +1,4 @@
-// Apenas numeros no imput
+// Apenas numeros no input
 function onlyNumber(evt) {
     var theEvent = evt || window.event;
     var key = theEvent.keyCode || theEvent.which;
@@ -10,7 +10,7 @@ function onlyNumber(evt) {
     }
 }
 
-//Ao apertar ENTER no imput de CEP ele realiza o procedimento sem precisar clickar no botão BUSCAR
+//Ao apertar ENTER no input de CEP ele realiza o procedimento sem precisar clickar no botão BUSCAR
 $("#buscar-cidade-cep").keypress(function (e) {
     if (e.wich == 13 || e.keyCode == 13) {
         $("#submit-cep").trigger("click");
