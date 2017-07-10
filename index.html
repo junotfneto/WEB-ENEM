@@ -1,93 +1,117 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>Trabalho WEB</title>
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
-
-  </head>
-  <body>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuGhXcfI3G4smascxP0CUMHFh0fSAgiv8&libraries=places&callback=initMap"
-    async defer></script>
-    <script type="text/javascript" src="js/maps.js"></script>
-
-  <div class="title">
-    Trabalho Web
-  </div>
-  
-
- 
-    <div id="posicoes-clicadas" class="container-right">
-
-    <div class="container-full">
-      <input type="text" id="buscar-cidade" placeholder="Digite uma cidade"></input>
-      <input type="button" id="submit-cidade" value="OK"></button>
+</head>
+<body>
+    <div class="title">
+        Trabalho Web
     </div>
 
-      <table>
-          <thead>
-            <tr>
-              <th>Categoria</th>
-              <th>Valor</th>
+    <div id="posicoes-clicadas" class="container-right">
+        <div class="container-full">
+            <input type="text" id="buscar-cidade" placeholder="Digite uma cidade"></input>
+            <input type="button" id="submit-cidade" value="OK"></button>
 
-            </tr>
-          </thead>
-          <tbody id="tabela-resultados">
-            <tr class="row" >
-              <td class="info-nome">Latitude</td>
-              <td id="info-latitude"></td>
-            </tr>
+            <input type="text" id="buscar-cidade-cep" placeholder="Digite um CEP" onkeypress="onlyNumber(event)" maxlength="8"></input>
+            <input type="button" id="submit-cep" value="Buscar"></button>
+        </div>
 
-            <tr class="row" >
-              <td class="info-nome">Longitude</td>
-              <td id="info-longitude"></td>
-            </tr>
-
-            <tr class="row" >
-              <td class="info-nome">Cidade</td>
-              <td id="info-cidade"></td>
-            </tr>
-
-            <tr class="row" >
-              <td class="info-nome">UF</td>
-              <td id="info-uf"></td>
-            </tr>
-
-            <tr class="row">
-              <td class="info-nome">Média</td>
-              <td class="info-media"></td>
-            </tr>
-
-            <tr class="row" >
-              <td class="info-nome">Média redação</td>
-              <td class="info-redacao"></td>
-            </tr>
-
-            <tr class="row" >
-              <td class="info-nome">Média redação</td>
-              <td class="info-redacao"></td>
-            </tr>
-
-            <tr class="row" >
-              <td class="info-nome">Média exatas</td>
-              <td class="info-exatas"></td>
-            </tr>
-
-            <tr class="row" >
-              <td class="info-nome">Média humanas/linguagens</td>
-              <td class="info-humanas"></td>
-            </tr>
-
-          </tbody>
+        <table>
+            <thead>
+                <tr>
+                    <th>Resultado da busca CEP</th>
+                </tr>
+            </thead>
+            <tbody id="tabela-resultados">
+                <tr class="row">
+                    <td class="info-nome">Bairro</td>
+                    <td id="resultado-bairro"></td>
+                </tr>
+                <tr class="row">
+                    <td class="info-nome">CEP</td>
+                    <td id="resultado-cep"></td>
+                </tr>
+                <tr class="row">
+                    <td class="info-nome">Cidade</td>
+                    <td id="resultado-cidade"></td>
+                </tr>
+                <tr class="row">
+                    <td class="info-nome">Estado</td>
+                    <td id="resultado-estado"></td>
+                </tr>
+                <tr class="row">
+                    <td class="info-nome">Logradouro</td>
+                    <td id="resultado-logradouro"></td>
+                </tr>
+                <tr class="row">
+                    <td class="info-nome">Tipo logradouro</td>
+                    <td id="resultado-logradouro-tipo"></td>
+                </tr>
+            </tbody>
         </table>
 
+        <table>
+            <thead>
+                <tr>
+                    <th>Categoria</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody id="tabela-resultados">
+                <tr class="row">
+                    <td class="info-nome">Latitude</td>
+                    <td id="info-latitude"></td>
+                </tr>
+                <tr class="row">
+                    <td class="info-nome">Longitude</td>
+                    <td id="info-longitude"></td>
+                </tr>
+                <tr class="row">
+                    <td class="info-nome">Cidade</td>
+                    <td id="info-cidade"></td>
+                </tr>
+                <tr class="row">
+                    <td class="info-nome">UF</td>
+                    <td id="info-uf"></td>
+                </tr>
+                <tr class="row">
+                    <td class="info-nome">Média</td>
+                    <td class="info-media"></td>
+                </tr>
+                <tr class="row">
+                    <td class="info-nome">Média redação</td>
+                    <td class="info-redacao"></td>
+                </tr>
+                <tr class="row">
+                    <td class="info-nome">Média redação</td>
+                    <td class="info-redacao"></td>
+                </tr>
+                <tr class="row">
+                    <td class="info-nome">Média exatas</td>
+                    <td class="info-exatas"></td>
+                </tr>
+                <tr class="row">
+                    <td class="info-nome">Média humanas/linguagens</td>
+                    <td class="info-humanas"></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-     <div id="map"></div>
+    <div id="map"></div>
 
 
-    
-    <footer class="footer">Alunos: Airton, Cristhian, Jeiel, Junot</footer>
-  </body>
+    <footer>Alunos: Airton, Cristhian, Jeiel, Junot</footer>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuGhXcfI3G4smascxP0CUMHFh0fSAgiv8&libraries=places&callback=initMap"
+            async defer></script>
+    <script type="text/javascript" src="js/maps.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/jquery-3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/api-correios.js"></script>
+</body>
 </html>
