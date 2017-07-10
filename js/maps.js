@@ -1,5 +1,6 @@
 var map;
 var currentmarker = null;
+var autocomplete;
 var capitais=Array();
 //NORDESTE
 	capitais[0] = {lat: -12.9730401, lng: -38.502304}; //SALVADOR
@@ -54,9 +55,73 @@ function initMap() {
         if(currentmarker != null)
           currentmarker.setMap(null);
         //document.getElementById('posicoes-clicadas').innerHTML+= event.latLng+"<br/>";
-        updatePositionTable(event.latLng);
-        currentmarker = addMarker(map, event.latLng, "A");
+        //updatePositionTable(event.latLng);
+        //currentmarker = addMarker(map, event.latLng, "A");
     });
+
+    autocomplete = new google.maps.places.Autocomplete(document.getElementById('buscar-cidade'));
+    autocomplete.bindTo('bounds', map);
+
+    var infowindow = new google.maps.InfoWindow();
+    var marker = new google.maps.Marker({
+          map: map,
+          anchorPoint: new google.maps.Point(0, -29)
+        });
+
+    autocomplete.addListener('place_changed', function() {
+          if(currentmarker != null)
+            currentmarker.setMap(null);
+          infowindow.close();
+          marker.setVisible(false);
+          var place = autocomplete.getPlace();
+          if (!place.geometry) {
+            // User entered the name of a Place that was not suggested and
+            // pressed the Enter key, or the Place Details request failed.
+            window.alert("No details available for input: '" + place.name + "'");
+            return;
+          }
+          var inBR = false;
+          for(i = 0; i < place.address_components.length; i++){
+            if(place.address_components[i].short_name == "BR")
+              inBR = true;
+          }
+          if(inBR == false){
+            window.alert("No details available for input: '" + place.name + "'");
+            return;
+          }
+
+          // If the place has a geometry, then present it on a map.
+          if (place.geometry.viewport) {
+            map.fitBounds(place.geometry.viewport);
+          } else {
+            map.setCenter(place.geometry.location);
+            map.setZoom(17);  // Why 17? Because it looks good.
+          }
+          marker.setIcon(/** @type {google.maps.Icon} */({
+            url: place.icon,
+            size: new google.maps.Size(71, 71),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(17, 34),
+            scaledSize: new google.maps.Size(35, 35)
+          }));
+          marker.setPosition(place.geometry.location);
+          marker.setVisible(true);
+          addMarker(map,marker.position, "");
+
+          var address = '';
+          if (place.address_components) {
+            address = [
+              (place.address_components[0] && place.address_components[0].short_name || ''),
+              (place.address_components[1] && place.address_components[1].short_name || ''),
+              (place.address_components[2] && place.address_components[2].short_name || '')
+            ].join(' ');
+          }
+
+          infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
+          infowindow.open(map, marker);
+          updatePositionTable(marker.position, place.address_components[1].short_name, place.address_components[2].short_name);
+          console.log(place.address_components[3].short_name);
+        });
 }
 
 function addMarker(map, location, label){
@@ -68,17 +133,19 @@ function addMarker(map, location, label){
 
     google.maps.event.addListener(marker, 'click', function(event) {
           //document.getElementById('posicoes-clicadas').innerHTML+= event.latLng+"<br/>";
-          updatePositionTable(event.latLng);
-          if(currentmarker != null)
-            currentmarker.setMap(null);
+          //updatePositionTable(event.latLng);
+          //if(currentmarker != null)
+          //  currentmarker.setMap(null);
     });
 
     return marker;
 }
 
-function updatePositionTable(latLng){
+function updatePositionTable(latLng, endereco, estado){
   document.getElementById('info-latitude').innerHTML= latLng.lat();
   document.getElementById('info-longitude').innerHTML= latLng.lng();
+  document.getElementById('info-cidade').innerHTML= endereco;
+  document.getElementById('info-uf').innerHTML= estado;
 }
 
 initMap();
