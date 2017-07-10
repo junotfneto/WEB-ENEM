@@ -27,7 +27,7 @@
                 $("#resultado-logradouro").html(data.logradouro);
                 $("#resultado-logradouro-tipo").html(data.tipoDeLogradouro);
                 
-                console.log(data);
+                //console.log(data);
                 //alert("Bairro: " + data.bairro + "\n" + "CEP: " + data.cep + "\n" + "Cidade: " + data.cidade + "\n" + "Estado: " + data.estado + "\n" + "Logradouro: " + data.logradouro + "\n" + "Tipo de logradouro: " + data.tipoDeLogradouro);
             } // Ok
             , 400: function (msg) { console.log(msg); } // Bad Request
