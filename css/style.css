@@ -1,15 +1,16 @@
-#map {
-        height: 60%;
-        width:60%;
-        float: left;
-        margin-top:10px;
-      }
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
+#map{
+  height: 60%;
+  width:60%;
+  float: left;
+  margin-top:10px;
+}
+
+/* Optional: Makes the sample page fill the window. */
+html, body{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 
 .title{
   text-align:center;
@@ -23,7 +24,7 @@
   border-bottom-width: 8px;
 }
 
-.footer {
+footer {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -34,7 +35,6 @@
 }
 
 .container-right{
-
   width:38%;
   float: right;
   margin-top:10px;
@@ -50,6 +50,15 @@
   height: 20px;
 }
 #submit-cidade{
+  width:14%;
+  margin-right:5px;
+  height: 25px;
+}
+
+#buscar-cidade-cep{
+  height: 20px;
+}
+#submit-cep{
   width:14%;
   margin-right:5px;
   height: 25px;
@@ -76,4 +85,8 @@ th{
 #table-resultados{
   border: 1px solid black;
   padding: 15px;
+}
+
+input{
+    margin-bottom: 3px;
 }
