@@ -108,6 +108,7 @@ function initMap() {
           marker.setVisible(true);
           addMarker(map,marker.position, "");
 
+          var UF = "";
           var address = '';
           if (place.address_components) {
             address = [
@@ -115,11 +116,20 @@ function initMap() {
               (place.address_components[1] && place.address_components[1].short_name || ''),
               (place.address_components[2] && place.address_components[2].short_name || '')
             ].join(' ');
+
+            for(var i = 0; i < place.address_components.length; i++){
+              if(place.address_components[i].types[0] == "administrative_area_level_1")
+                UF = place.address_components[i].short_name ;
+            }
           }
+
+          
+
+          
 
           infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
           infowindow.open(map, marker);
-          updatePositionTable(marker.position, place.name, place.address_components[2].short_name);
+          updatePositionTable(marker.position, place.name, UF);
           console.log(place.address_components[3].short_name);
           console.log(getMedia(place.name.toUpperCase()));
         });
