@@ -19,12 +19,12 @@
         contentType: "application/json",
         statusCode: {
             200: function (data) {
-                $("#resultado-bairro").html(data.bairro);
-                $("#resultado-cep").html(data.cep);
-                $("#resultado-cidade").html(data.cidade);
-                $("#resultado-estado").html(data.estado);
-                $("#resultado-logradouro").html(data.logradouro);
-                $("#resultado-logradouro-tipo").html(data.tipoDeLogradouro);
+                //$("#resultado-bairro").html(data.bairro);
+                //$("#resultado-cep").html(data.cep);
+                $("#info-cidade").html(data.cidade);
+                //$("#resultado-estado").html(data.estado);
+                //$("#resultado-logradouro").html(data.logradouro);
+                //$("#resultado-logradouro-tipo").html(data.tipoDeLogradouro);
 
                 //var googleUrl = getGoogleURL(data.cep);
 
@@ -34,6 +34,11 @@
                         var thisMap = getMap();
                         var loc = results[0]["geometry"]["location"];
                         addMarker(thisMap, loc, "");
+
+                        thisMap.setCenter(loc);
+                        thisMap.setZoom(17);
+                        console.log("Foi!");
+                        updatePositionTable(loc, data.cidade, data.estado)
                     }
                 });   
 

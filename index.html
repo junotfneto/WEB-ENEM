@@ -12,6 +12,10 @@
         Trabalho Web
     </div>
 
+    <div id="Carregando">
+      Carregando...<br/>
+    </div>
+
     <div id="posicoes-clicadas" class="container-right">
         <div class="container-full">
             <input type="text" id="buscar-cidade" placeholder="Digite uma cidade"></input>
@@ -24,53 +28,19 @@
         <table>
             <thead>
                 <tr>
-                    <th>Resultado da busca CEP</th>
-                </tr>
-            </thead>
-            <tbody id="tabela-resultados">
-                <tr class="row">
-                    <td class="info-nome">Bairro</td>
-                    <td id="resultado-bairro"></td>
-                </tr>
-                <tr class="row">
-                    <td class="info-nome">CEP</td>
-                    <td id="resultado-cep"></td>
-                </tr>
-                <tr class="row">
-                    <td class="info-nome">Cidade</td>
-                    <td id="resultado-cidade"></td>
-                </tr>
-                <tr class="row">
-                    <td class="info-nome">Estado</td>
-                    <td id="resultado-estado"></td>
-                </tr>
-                <tr class="row">
-                    <td class="info-nome">Logradouro</td>
-                    <td id="resultado-logradouro"></td>
-                </tr>
-                <tr class="row">
-                    <td class="info-nome">Tipo logradouro</td>
-                    <td id="resultado-logradouro-tipo"></td>
-                </tr>
-            </tbody>
-        </table>
-
-        <table>
-            <thead>
-                <tr>
                     <th>Categoria</th>
                     <th>Valor</th>
                 </tr>
             </thead>
             <tbody id="tabela-resultados">
-                <tr class="row">
+                <!--<tr class="row">
                     <td class="info-nome">Latitude</td>
                     <td id="info-latitude"></td>
                 </tr>
                 <tr class="row">
                     <td class="info-nome">Longitude</td>
                     <td id="info-longitude"></td>
-                </tr>
+                </tr>-->
                 <tr class="row">
                     <td class="info-nome">Cidade</td>
                     <td id="info-cidade"></td>
@@ -80,24 +50,24 @@
                     <td id="info-uf"></td>
                 </tr>
                 <tr class="row">
-                    <td class="info-nome">Média</td>
-                    <td class="info-media"></td>
-                </tr>
-                <tr class="row">
                     <td class="info-nome">Média redação</td>
-                    <td class="info-redacao"></td>
+                    <td id="info-redacao"></td>
                 </tr>
                 <tr class="row">
-                    <td class="info-nome">Média redação</td>
-                    <td class="info-redacao"></td>
+                    <td class="info-nome">Média ciências humanas</td>
+                    <td id="info-chumanas"></td>
                 </tr>
                 <tr class="row">
-                    <td class="info-nome">Média exatas</td>
-                    <td class="info-exatas"></td>
+                    <td class="info-nome">Média ciências naturais</td>
+                    <td id="info-cnaturais"></td>
                 </tr>
                 <tr class="row">
-                    <td class="info-nome">Média humanas/linguagens</td>
-                    <td class="info-humanas"></td>
+                    <td class="info-nome">Média matemática</td>
+                    <td id="info-matematica"></td>
+                </tr>
+                <tr class="row">
+                    <td class="info-nome">Média linguagens</td>
+                    <td id="info-linguagens"></td>
                 </tr>
             </tbody>
         </table>
@@ -113,5 +83,6 @@
     <script type="text/javascript" src="js/maps.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
     <script type="text/javascript" src="js/api-correios.js"></script>
+    <script type="text/javascript" src="js/enem.js"></script>
 </body>
 </html>

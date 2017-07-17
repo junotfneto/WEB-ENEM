@@ -119,8 +119,9 @@ function initMap() {
 
           infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
           infowindow.open(map, marker);
-          updatePositionTable(marker.position, place.address_components[1].short_name, place.address_components[2].short_name);
+          updatePositionTable(marker.position, place.name, place.address_components[2].short_name);
           console.log(place.address_components[3].short_name);
+          console.log(getMedia(place.name.toUpperCase()));
         });
 }
 
@@ -142,10 +143,18 @@ function addMarker(map, location, label){
 }
 
 function updatePositionTable(latLng, endereco, estado){
-  document.getElementById('info-latitude').innerHTML= latLng.lat();
-  document.getElementById('info-longitude').innerHTML= latLng.lng();
+  //document.getElementById('info-latitude').innerHTML= latLng.lat();
+  //document.getElementById('info-longitude').innerHTML= latLng.lng();
   document.getElementById('info-cidade').innerHTML= endereco;
   document.getElementById('info-uf').innerHTML= estado;
+
+  var medias = getMedia(endereco.toUpperCase());
+  document.getElementById('info-redacao').innerHTML= medias[0].toFixed(2);
+  document.getElementById('info-chumanas').innerHTML= medias[1].toFixed(2);
+  document.getElementById('info-cnaturais').innerHTML= medias[2].toFixed(2);
+  document.getElementById('info-linguagens').innerHTML= medias[3].toFixed(2);
+  document.getElementById('info-matematica').innerHTML= medias[4].toFixed(2);
+
 }
 
 function getMap(){
