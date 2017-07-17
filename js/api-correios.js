@@ -9,7 +9,6 @@
 
     var url = "http://correiosapi.apphb.com/cep/" + cep;
 
-
     $.ajax({
         type: "POST",
         url: url,
@@ -26,6 +25,19 @@
                 $("#resultado-estado").html(data.estado);
                 $("#resultado-logradouro").html(data.logradouro);
                 $("#resultado-logradouro-tipo").html(data.tipoDeLogradouro);
+
+                //var googleUrl = getGoogleURL(data.cep);
+
+                var geocoder = new google.maps.Geocoder();
+                geocoder.geocode({ 'address': data.cidade + ", " + data.estado }, function(results, status) {
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        var thisMap = getMap();
+                        var loc = results[0]["geometry"]["location"];
+                        addMarker(thisMap, loc, "");
+                    }
+                });   
+
+
                 
                 //console.log(data);
                 //alert("Bairro: " + data.bairro + "\n" + "CEP: " + data.cep + "\n" + "Cidade: " + data.cidade + "\n" + "Estado: " + data.estado + "\n" + "Logradouro: " + data.logradouro + "\n" + "Tipo de logradouro: " + data.tipoDeLogradouro);
@@ -38,6 +50,3 @@
     });
 
 });
-
-
-

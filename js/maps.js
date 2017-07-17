@@ -148,4 +148,8 @@ function updatePositionTable(latLng, endereco, estado){
   document.getElementById('info-uf').innerHTML= estado;
 }
 
+function getMap(){
+  return map;
+}
+
 initMap();
