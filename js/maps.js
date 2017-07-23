@@ -158,17 +158,22 @@ function updatePositionTable(latLng, endereco, estado){
   document.getElementById('info-cidade').innerHTML= endereco;
   document.getElementById('info-uf').innerHTML= estado;
 
-  var medias = getMedia(endereco.toUpperCase());
+  var medias = getMedia(validaCaracteres(endereco));
   document.getElementById('info-redacao').innerHTML= medias[0].toFixed(2);
   document.getElementById('info-chumanas').innerHTML= medias[1].toFixed(2);
   document.getElementById('info-cnaturais').innerHTML= medias[2].toFixed(2);
   document.getElementById('info-linguagens').innerHTML= medias[3].toFixed(2);
   document.getElementById('info-matematica').innerHTML= medias[4].toFixed(2);
 
+  document.getElementById('submit-detalhes').disabled = false;
 }
+
+
 
 function getMap(){
   return map;
 }
+
+
 
 initMap();

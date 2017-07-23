@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trabalho WEB</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="title">
+        Trabalho Web
+    </div>
+
+        <table>
+            <tbody id="tabela-cidade">
+                <tr class="row">
+                    <td class="info-nome">Cidade</td>
+                    <td colspan=3 id="info-cidade2"></td>
+                </tr>
+                <tr class="row">
+                    <td class="info-nome">UF</td>
+                    <td colspan=3 id="info-uf2"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <label for="range-idade">Idade máxima:</label>
+        <input type="range" id="range-idade" value="18" min="16" max="90">
+        <label id="lbl-idade" for="range-idade">18</label><br/>
+        <label id="lbl-cor-pele" for="cor-pele">Cor de pele:</label><br/>
+        <div id="cor-pele">
+                <input type="checkbox" class="radio" id="c0" value="0" checked />Não declarado</label>
+                <input type="checkbox" class="radio" id="c1" value="1" />Branca</label>
+                <input type="checkbox" class="radio" id="c2" value="2" />Preta</label>
+                <input type="checkbox" class="radio" id="c3" value="3" />Parda</label>
+                <input type="checkbox" class="radio" id="c4" value="4" />Amarela</label>
+                <input type="checkbox" class="radio" id="c5" value="5" />Indígena</label>
+        </div>
+        <br/>
+    </div>
+
+    <table>
+            <thead>
+                <tr>
+                    <th>Categoria</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody id="tabela-resultados">
+
+                <tr class="row">
+                    <td class="info-nome">Média redação</td>
+                    <td id="info-redacao"></td>
+                </tr>
+                <tr class="row">
+                    <td class="info-nome">Média ciências humanas</td>
+                    <td id="info-chumanas"></td>
+                </tr>
+                <tr class="row">
+                    <td class="info-nome">Média ciências naturais</td>
+                    <td id="info-cnaturais"></td>
+                </tr>
+                <tr class="row">
+                    <td class="info-nome">Média matemática</td>
+                    <td id="info-matematica"></td>
+                </tr>
+                <tr class="row">
+                    <td class="info-nome">Média linguagens</td>
+                    <td id="info-linguagens"></td>
+                </tr>
+            </tbody>
+        </table>
+
+    <footer>Alunos: Airton, Cristhian, Jeiel, Junot</footer>
+    <script type="text/javascript" src="js/util.js"></script>
+    <script type="text/javascript" src="enem.json"></script>
+    <script type="text/javascript" src="js/detalhado.js"></script>
+</body>
+</html>

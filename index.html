@@ -13,7 +13,6 @@
     </div>
 
     <div id="Carregando">
-      Carregando...<br/>
     </div>
 
     <div id="posicoes-clicadas" class="container-right">
@@ -71,6 +70,7 @@
                 </tr>
             </tbody>
         </table>
+        <input type="button" id="submit-detalhes" value="Detalhes" disabled></button>
     </div>
     <div id="map"></div>
 
@@ -78,11 +78,14 @@
     <footer>Alunos: Airton, Cristhian, Jeiel, Junot</footer>
 
     <script type="text/javascript" src="js/jquery-3.2.1/jquery.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuGhXcfI3G4smascxP0CUMHFh0fSAgiv8&libraries=places&callback=initMap"
-            async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuGhXcfI3G4smascxP0CUMHFh0fSAgiv8&libraries=places&callback=initMap" async defer></script>
+    
+    <script type="text/javascript" src="js/util.js"></script>
     <script type="text/javascript" src="js/maps.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
     <script type="text/javascript" src="js/api-correios.js"></script>
+    <script type="text/javascript" src="enem.json"></script>
     <script type="text/javascript" src="js/enem.js"></script>
+
 </body>
 </html>
