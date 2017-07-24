@@ -1,7 +1,7 @@
 # WEB-ENEM
 Trabalho final da disciplina MATC82, SISTEMAS WEB - 2017.1
 
-## Alunos
+## ALUNOS
 * Airton Serra
 * Cristhian Carvalho
 * Jeiel Moura
