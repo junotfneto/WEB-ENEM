@@ -40,8 +40,9 @@ buttonCep.addEventListener("click", function (event) {
                     }
                 }
                 else {
+                    //Erro ao buscar CEP.
                     inputCep.value = ("");
-                    alert("Erro ao buscar CEP.");
+                    alert("Ocorreu um erro ao buscar o CEP.");
                 }
                 
 
