@@ -1,4 +1,4 @@
-//Apenas números no input
+//Apenas números no input.
 function onlyNumber(evt) {
     var theEvent = evt || window.event;
     var key = theEvent.keyCode || theEvent.which;
@@ -10,7 +10,7 @@ function onlyNumber(evt) {
     }
 }
 
-//Ao apertar ENTER no input de CEP ele realiza o procedimento sem precisar clickar no botão BUSCAR
+//Ao apertar ENTER no input de CEP ele realiza o procedimento sem precisar clickar no botão BUSCAR.
 var buscarcep = document.getElementById("buscar-cidade-cep");
 buscarcep.addEventListener("keypress", function(e){
     if (e.wich == 13 || e.keyCode == 13) {
@@ -22,3 +22,13 @@ var detalhes = document.getElementById("submit-detalhes");
 detalhes.addEventListener("click", function(e){
     window.open("detalhado.html?city="+document.getElementById('info-cidade').innerHTML+"&state="+document.getElementById('info-uf').innerHTML,"_self");
 });
+
+//Máscara de CEP.
+function mascara(t, mask) {
+    var i = t.value.length;
+    var saida = mask.substring(1, 0);
+    var texto = mask.substring(i)
+    if (texto.substring(0, 1) != saida) {
+        t.value += texto.substring(0, 1);
+    }
+}
