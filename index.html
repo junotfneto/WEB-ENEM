@@ -20,7 +20,7 @@
             <input type="text" id="buscar-cidade" placeholder="Digite uma cidade"></input>
             <input type="button" id="submit-cidade" value="OK"></button>
 
-            <input type="text" id="buscar-cidade-cep" placeholder="Digite um CEP" onkeypress="onlyNumber(event)" maxlength="8"></input>
+            <input type="text" id="buscar-cidade-cep" placeholder="Digite um CEP" onkeypress="onlyNumber(event); mascara(this, '#####-###');" maxlength="9"></input>
             <input type="button" id="submit-cep" value="Buscar"></button>
         </div>
 
@@ -83,7 +83,7 @@
     <script type="text/javascript" src="js/util.js"></script>
     <script type="text/javascript" src="js/maps.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
-    <script type="text/javascript" src="js/api-correios.js"></script>
+    <script type="text/javascript" src="js/cep.js"></script>
     <script type="text/javascript" src="enem.json"></script>
     <script type="text/javascript" src="js/enem.js"></script>
 
