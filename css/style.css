@@ -6,22 +6,27 @@
 }
 
 /* Optional: Makes the sample page fill the window. */
-html, body{
+html, body {
   height: 100%;
   margin: 0;
   padding: 0;
 }
 
-.title{
+header {
   text-align:center;
-  font-size:40px;
-  font-weight: bold;
   background-color: #b30000;
   height:65px;
   border-bottom-style: solid;
-  color:white;
   border-bottom-color:black;
   border-bottom-width: 8px;
+}
+
+h1#titulo {
+  font-size:40px;
+  font-weight: bold;
+  color:white;
+  position: relative;
+  top: 13px;
 }
 
 footer {
@@ -70,6 +75,16 @@ table{
   table-layout: fixed;
 }
 
+table.table-detalhado,
+div#filtro-detalhado{
+    margin: 0 auto;
+    width: 75%;
+}
+
+table.marginTop {
+    margin-top: 10px;
+}
+
 td, th {
   padding: .7em;
   margin: 0;
@@ -96,3 +111,4 @@ input{
   margin-right:5px;
   height: 25px;
 }
+
