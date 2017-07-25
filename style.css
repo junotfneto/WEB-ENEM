@@ -1,0 +1,139 @@
+#map{
+  height: 70%;
+  width:60%;
+  float: left;
+  margin-top:10px;
+}
+
+/* Optional: Makes the sample page fill the window. */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #005EA5;
+  height:130px;
+  border-bottom-style: solid;
+  border-bottom-color:#FFEAA8;
+  border-bottom-width: 8px;
+      text-align:center; 
+    display:table;
+    width:100%;
+}
+
+header h1#titulo {
+  font-size:40px;
+  font-family: 'Cairo', sans-serif;
+  font-weight: bold;
+  color:white;
+  text-align: center;
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+  width:100%;
+ 
+}
+
+footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+}
+
+.container-right{
+  width:38%;
+  float: right;
+  margin-top:10px;
+}
+
+.container-full{
+  width:100%;
+  margin-bottom:10px;
+}
+
+#buscar-cidade{
+  width:80%;
+  height: 20px;
+}
+#submit-cidade{
+  width:14%;
+  margin-right:5px;
+  height: 25px;
+}
+
+#buscar-cidade-cep{
+  height: 20px;
+}
+#submit-cep{
+  width:14%;
+  margin-right:5px;
+  height: 25px;
+}
+
+table{
+  width: 95%;
+  margin-bottom : .5em;
+  table-layout: fixed;
+  font-family: 'Raleway', sans-serif;
+}
+
+table.table-detalhado,
+div#filtro-detalhado{
+    margin: 0 auto;
+    width: 75%;
+}
+
+div#filtro-detalhado{
+  font-family: 'Raleway', sans-serif;
+}
+
+table.marginTop {
+    margin-top: 10px;
+}
+
+td, th {
+  padding: .7em;
+  margin: 0;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+input{
+  font-family: 'Raleway', sans-serif;
+}
+
+th{
+  font-weight: bold;
+  background-color: #EEE;
+}
+
+#table-resultados{
+  border: 1px solid black;
+  padding: 15px;
+}
+
+input{
+    margin-bottom: 3px;
+}
+
+#submit-detalhes{
+  width:95%;
+  margin-right:5px;
+  height: 25px;
+}
+
+#submit-cep, #submit-detalhes, #submit-cidade {
+  font-family: 'Raleway', sans-serif;
+  color: #ffffff;
+  font-size: 12px;
+  background: #005EA5;
+  padding: 5px 10px 5px 10px;
+  text-decoration: none;
+}
+
