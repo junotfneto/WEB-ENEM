@@ -13,20 +13,27 @@ html, body {
 }
 
 header {
-  text-align:center;
-  background-color: #b30000;
-  height:65px;
+  background-color: #005EA5;
+  height:130px;
   border-bottom-style: solid;
-  border-bottom-color:black;
+  border-bottom-color:#FFEAA8;
   border-bottom-width: 8px;
+      text-align:center; 
+    display:table;
+    width:100%;
 }
 
-h1#titulo {
+header h1#titulo {
   font-size:40px;
+  font-family: 'Cairo', sans-serif;
   font-weight: bold;
   color:white;
+  text-align: center;
   position: relative;
-  top: 13px;
+  display: table-cell;
+  vertical-align: middle;
+  width:100%;
+ 
 }
 
 footer {
@@ -73,12 +80,17 @@ table{
   width: 95%;
   margin-bottom : .5em;
   table-layout: fixed;
+  font-family: 'Raleway', sans-serif;
 }
 
 table.table-detalhado,
 div#filtro-detalhado{
     margin: 0 auto;
     width: 75%;
+}
+
+div#filtro-detalhado{
+  font-family: 'Raleway', sans-serif;
 }
 
 table.marginTop {
@@ -90,6 +102,10 @@ td, th {
   margin: 0;
   border: 1px solid #ccc;
   text-align: center;
+}
+
+input{
+  font-family: 'Raleway', sans-serif;
 }
 
 th{
@@ -110,5 +126,14 @@ input{
   width:95%;
   margin-right:5px;
   height: 25px;
+}
+
+#submit-cep, #submit-detalhes, #submit-cidade {
+  font-family: 'Raleway', sans-serif;
+  color: #ffffff;
+  font-size: 12px;
+  background: #005EA5;
+  padding: 5px 10px 5px 10px;
+  text-decoration: none;
 }
 
