@@ -36,6 +36,60 @@ header h1#titulo {
  
 }
 
+h2{
+  font-size:30px;
+  font-family: 'Cairo', sans-serif;
+  font-weight: bold;
+  color:black;
+  text-align: center;
+  position: relative;
+  vertical-align: middle;
+  width:100%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+h3{
+  font-size:20px;
+  font-family: 'Cairo', sans-serif;
+  font-weight: bold;
+  color:black;
+  text-align: center;
+  position: relative;
+  vertical-align: middle;
+  width:100%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+p{
+  font-size:18px;
+  font-family: 'Cairo', sans-serif;
+  color:black;
+  text-align: center;
+  position: relative;
+  vertical-align: middle;
+  width:100%;
+  margin: 0 auto;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    flex: 1 0 auto;
+    margin: 0 auto;
+    text-align: left;
+    background-color: #f1fefb;
+    min-height:100%;
+}
+
+.content {
+    margin: 0 auto;
+    padding: 15px;
+    width: 70%;
+}
+
+
 header #menu {
   font-size:25px;
   font-family: 'Cairo', sans-serif;
@@ -67,6 +121,11 @@ footer {
   text-align: center;
 }
 
+.container-left{
+  width:38%;
+  float: left;
+}
+
 .container-right{
   width:38%;
   float: right;
@@ -76,6 +135,18 @@ footer {
 .container-full{
   width:100%;
   margin-bottom:10px;
+}
+.container-full-blue{
+  width:100%;
+  float: right;
+  margin-bottom:10px;
+  background-color: #005EA5;
+  height: 322px;
+  color:white;
+}
+
+.white-text{
+  color:white;
 }
 
 #buscar-cidade{
