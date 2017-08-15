@@ -24,7 +24,20 @@ header {
 }
 
 header h1#titulo {
-  font-size:40px;
+  font-size:50px;
+  font-family: 'Cairo', sans-serif;
+  font-weight: bold;
+  color:white;
+  text-align: center;
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+  width:80%;
+ 
+}
+
+header #menu {
+  font-size:25px;
   font-family: 'Cairo', sans-serif;
   font-weight: bold;
   color:white;
@@ -33,6 +46,14 @@ header h1#titulo {
   display: table-cell;
   vertical-align: middle;
   width:100%;
+ 
+}
+
+header a {
+  font-size:25px;
+  font-family: 'Cairo', sans-serif;
+  font-weight: bold;
+  color:white;
  
 }
 
