@@ -77,7 +77,7 @@ function initMap() {
           if (!place.geometry) {
             // User entered the name of a Place that was not suggested and
             // pressed the Enter key, or the Place Details request failed.
-            window.alert("No details available for input: '" + place.name + "'");
+            window.alert("Sem informações para: '" + place.name + "'");
             return;
           }
           var inBR = false;
@@ -86,7 +86,7 @@ function initMap() {
               inBR = true;
           }
           if(inBR == false){
-            window.alert("No details available for input: '" + place.name + "'");
+            window.alert("Sem informações para: '" + place.name + "'");
             return;
           }
 
@@ -155,10 +155,19 @@ function addMarker(map, location, label){
 function updatePositionTable(latLng, endereco, estado){
   //document.getElementById('info-latitude').innerHTML= latLng.lat();
   //document.getElementById('info-longitude').innerHTML= latLng.lng();
+  var medias = getMedia(validaCaracteres(endereco));
+  var i;
+  for(i = 0; i < 5; i++){
+    if(isNaN(medias[i])){
+      alert("Localidade inválida! Tente novamente!");
+      return;
+    }
+  }
+
   document.getElementById('info-cidade').innerHTML= endereco;
   document.getElementById('info-uf').innerHTML= estado;
 
-  var medias = getMedia(validaCaracteres(endereco));
+  
   document.getElementById('info-redacao').innerHTML= medias[0].toFixed(2);
   document.getElementById('info-chumanas').innerHTML= medias[1].toFixed(2);
   document.getElementById('info-cnaturais').innerHTML= medias[2].toFixed(2);
