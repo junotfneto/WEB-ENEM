@@ -147,6 +147,10 @@ footer {
 
 .white-text{
   color:white;
+  margin-right:20px;
+  margin-left:-20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 #buscar-cidade{
@@ -229,3 +233,33 @@ input{
   text-decoration: none;
 }
 
+.bloco{
+  height: 100px;
+  margin-bottom: 50px;
+  margin-top: 20px;
+}
+
+.bloco-left{
+  height: inherit;
+  width:30%;
+  float: left;
+  border: dotted;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.bloco-center{
+  height: inherit;
+  width:30%;
+  float: left;
+  border: dotted;
+  margin-left: 30px;
+}
+
+.bloco-right{
+  height: inherit;
+  width:30%;
+  float: right;
+  border: dotted;
+  margin-right: 20px;
+}
